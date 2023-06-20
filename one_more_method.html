@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#first_name").mouseenter(function(){
+        document.getElementById("reply_f_name").innerHTML="Name Required"
+            
+
+        })
+        $("#first_name").mouseleave(function(){
+        document.getElementById("reply_f_name").innerHTML=""
+        
+            
+        });
+        $("#last_name").mouseenter(function(){
+
+        document.getElementById("reply_l_name").innerHTML="lastname Required"
+            })
+        $("#last_name").mouseleave(function(){
+        document.getElementById("reply_l_name").innerHTML=""
+        
+        
+        });
+        $("#emails").mouseenter(function(){
+
+document.getElementById("reply_emails").innerHTML="email Required"
+    })
+$("#emails").mouseleave(function(){
+document.getElementById("reply_emails").innerHTML=""
+
+
+});
+$("#passwords").mouseenter(function(){
+
+document.getElementById("reply_passwords").innerHTML="password Required"
+    })
+$("#passwords").mouseleave(function(){
+document.getElementById("reply_passwords").innerHTML=""
+
+
+});
+            $("#signsup").on({
+         click:function(){
+        var f_name=document.getElementById("first_name").value;
+        var l_name=document.getElementById("last_name").value;
+        var emailing=document.getElementById("emails").value;
+        var passingwords=document.getElementById("passwords").value;
+        var rule_f_naming=/^[a-zA-Z]+$/;
+        var rule_l_naming=/^[a-zA-Z]+$/;
+        var rule_emails=/^([a-zA-Z0-9\.\-\_])+\@([a-zA-Z])+\.([A-Za-z])+$/;
+        var rule_passwords=/^([0-9]{8,15})+$/;
+                if(rule_f_naming.test(f_name)==true){
+                    if(rule_l_naming.test(l_name)==true){
+if(rule_emails.test(emailing)==true){
+    if(rule_passwords.test(passingwords)==true){
+        alert("signup successfully")
+    }
+    else{
+        if(rule_passwords.test(passingwords)!=true){
+document.getElementById("reply_passwords").innerHTML="invalid password"
+        }
+        else{if(passingwords.length==0){
+            document.getElementById("reply_passwords").innerHTML=" password required"  
+        }}
+    
+    }
+}
+else{
+    if(rule_emails.test(emailing)!=true){
+    if(rule_passwords.test(passingwords)==true){
+        document.getElementById("reply_emails").innerHTML="invalid email"
+    
+    }
+    else{
+        if(rule_passwords.test(passingwords)!=true){
+            document.getElementById("reply_emails").innerHTML="invalid email"
+document.getElementById("reply_passwords").innerHTML="invalid password"
+}
+    
+    }
+} 
+}
+                    }
+                    else{
+                        if(rule_l_naming.test(l_name)!=true){
+if(rule_emails.test(emailing)==true){
+    if(rule_passwords.test(passingwords)==true){
+     document.getElementById("reply_l_name").innerHTML="put only alphabets"
+    }
+    else{
+        if(rule_passwords.test(passingwords)!=true){
+            document.getElementById("reply_l_name").innerHTML="put only alphabets"
+document.getElementById("reply_passwords").innerHTML="invalid password"
+        }
+    
+    }
+}
+else{
+    if(rule_emails.test(emailing)!=true){
+    if(rule_passwords.test(passingwords)==true){
+        document.getElementById("reply_l_name").innerHTML="put only alphabets"
+        document.getElementById("reply_emails").innerHTML="invalid email"
+    
+    }
+    else{
+        if(rule_passwords.test(passingwords)!=true){
+            document.getElementById("reply_l_name").innerHTML="put only alphabets"
+            document.getElementById("reply_emails").innerHTML="invalid email"
+document.getElementById("reply_passwords").innerHTML="invalid password"
+}
+    
+    }
+} 
+}
+                    }    
+                    }
+                }
+                else{
+                    if(rule_f_naming.test(f_name)!=true){
+                    if(rule_l_naming.test(l_name)==true){
+if(rule_emails.test(emailing)==true){
+    if(rule_passwords.test(passingwords)==true){
+        document.getElementById("reply_f_name").innerHTML="put only alphabets"
+    }
+    else{
+        if(rule_passwords.test(passingwords)!=true){
+            document.getElementById("reply_f_name").innerHTML="put only alphabets"   
+document.getElementById("reply_passwords").innerHTML="invalid password"
+        }
+    
+    }
+}
+else{
+    if(rule_emails.test(emailing)!=true){
+    if(rule_passwords.test(passingwords)==true){
+        document.getElementById("reply_f_name").innerHTML="put only alphabets"
+        document.getElementById("reply_emails").innerHTML="invalid email"
+    
+    }
+    else{
+        if(rule_passwords.test(passingwords)!=true){
+            document.getElementById("reply_f_name").innerHTML="put only alphabets"
+            document.getElementById("reply_emails").innerHTML="invalid email"
+document.getElementById("reply_passwords").innerHTML="invalid password"
+}
+    
+    }
+} 
+}
+                    }
+                    else{
+                        if(rule_l_naming.test(l_name)!=true){
+if(rule_emails.test(emailing)==true){
+    if(rule_passwords.test(passingwords)==true){
+        document.getElementById("reply_f_name").innerHTML="put only alphabets"
+     document.getElementById("reply_l_name").innerHTML="put only alphabets"
+    }
+    else{
+        if(rule_passwords.test(passingwords)!=true){
+            document.getElementById("reply_f_name").innerHTML="put only alphabets"
+            document.getElementById("reply_l_name").innerHTML="put only alphabets"
+document.getElementById("reply_passwords").innerHTML="invalid password"
+        }
+    
+    }
+}
+else{
+    if(rule_emails.test(emailing)!=true){
+    if(rule_passwords.test(passingwords)==true){
+        document.getElementById("reply_f_name").innerHTML="put only alphabets"
+        document.getElementById("reply_l_name").innerHTML="put only alphabets"
+        document.getElementById("reply_emails").innerHTML="invalid email"
+    
+    }
+    else{
+        if(rule_passwords.test(passingwords)!=true){
+            document.getElementById("reply_f_name").innerHTML="put only alphabets"
+            document.getElementById("reply_l_name").innerHTML="put only alphabets"
+            document.getElementById("reply_emails").innerHTML="invalid email"
+document.getElementById("reply_passwords").innerHTML="invalid password"
+}
+    
+    }
+} 
+}
+                    }    
+                    }
+                }   
+                }
+                    }
+                
+  
+         
+
+            });
+        })
+    </script>
+</head>
+<body>
+<div><input type="text" id="first_name" placeholder="First Name"><label id="reply_f_name"></label></div>
+<div><input type="text" id="last_name" placeholder="Last Name"><label id="reply_l_name"></label></div>
+<div><input type="email" id="emails" placeholder="Email"><label id="reply_emails"></label></div>
+<div><input type="password" id="passwords" placeholder="Password"><label id="reply_passwords"></label></div>
+<button id="signsup">Submit</button>
+</body>
+</html>
