@@ -65,6 +65,8 @@ document.getElementById("reply_passwords").innerHTML=""
                     if(rule_l_naming.test(l_name)==true){
 if(rule_emails.test(emailing)==true){
     if(rule_passwords.test(passingwords)==true){
+        localStorage.setItem("Id",emailing)
+        localStorage.setItem("passwrd",passingwords)
         alert("signup successfully")
     }
     else{
@@ -231,9 +233,13 @@ document.getElementById("reply_passwords").innerHTML="invalid password"
                     if(emailing.length==0){
                         if(passingwords.length==0){
                              document.getElementById("reply_f_name").innerHTML="First name required"
+                             document.getElementById("reply_f_name").style.color="red"
                             document.getElementById("reply_l_name").innerHTML="last name required"
+                            document.getElementById("reply_l_name").style.color="red"
                     document.getElementById("reply_emails").innerHTML="email required"
+                    document.getElementById("reply_emails").style.color="red"
                     document.getElementById("reply_passwords").innerHTML="password required"
+                    document.getElementById("reply_passwords").style.color="red"
                     }  
                 }  
                 } 
